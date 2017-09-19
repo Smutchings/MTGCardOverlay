@@ -3,7 +3,7 @@
   <title>MTG Ixalan Card Overlay</title>
   <link rel="stylesheet" type="text/css" href="CSS/style.css">
 
-  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
 
   <script>
     // Initialize Firebase
@@ -16,7 +16,9 @@
       messagingSenderId: "570504823421"
     };
     firebase.initializeApp(config);
+  </script>
 
+  <script>
     firebase.database().ref('/card-number/').on('value', function(snapshot) {
       document.querySelectorAll('#cardPreview')[0].innerHTML = '<img src="images/XLN/' + snapshot.val() + '.png"/>'
     });
