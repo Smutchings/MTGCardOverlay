@@ -16,3 +16,8 @@ body {
   right: 80px;
   top: 170px;
 }
+
+#cardPreview img {
+  height: 370px;
+  width: 265px;
+}
