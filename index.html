@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>MTG Commander Overlay</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDOzy4nqd-xtSmHgmjML1uIbdN-M5MDNYU",
+      authDomain: "mtg-card-overlay.firebaseapp.com",
+      databaseURL: "https://mtg-card-overlay.firebaseio.com",
+      projectId: "mtg-card-overlay",
+      storageBucket: "mtg-card-overlay.appspot.com",
+      messagingSenderId: "570504823421"
+    };
+    firebase.initializeApp(config);
+
+    firebase.database().ref('/mtg-card-overlay/').on('value', function(snapshot) {
+      document.querySelectorAll('#cardPreview')[0].innerHTML = '<img src="/images/XLN/' + snapshot.val() + '.png"/>'
+    });
+
+    </script>
+
+</head>
+<body>
+
+<div id="rightSidebar">
+  <img src="images/rightSidebar.png"/>
+</div>
+
+<div id="cardPreview">
+  <img src="images/XLN/000.png"/>
+</div>
+
+</body>
+</html>
